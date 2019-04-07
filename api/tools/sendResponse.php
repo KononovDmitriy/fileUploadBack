@@ -1,7 +1,7 @@
 <?php 
 
 function jsonEncode($status, $imgUrl) {
-	$obj = array('status' => $status, 'imgUrl' => $imgUrl);
+	$obj = array('status' => $status, 'filesList' => $imgUrl);
 	return json_encode($obj);
 }
 

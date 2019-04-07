@@ -1,5 +1,7 @@
 <?php
 	define('SERVER_PATH', $_SERVER['DOCUMENT_ROOT']);
+	define('SERVER_ADDR', $_SERVER['SERVER_ADDR']);
+	define('HTTP_PROTOCOL', 'http://');
 	define('METHOD', $_SERVER['REQUEST_METHOD']);
 	define('QUERY', $_SERVER['REQUEST_URI']);
 

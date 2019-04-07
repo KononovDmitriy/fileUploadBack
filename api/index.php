@@ -10,8 +10,4 @@ switch (METHOD) {
 		postApi($API);
 		break;
 }
-
-
-
-
 ?>
