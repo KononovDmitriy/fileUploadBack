@@ -8,7 +8,7 @@ function _getImgType($type) {
 }
 
 function _clearDir() {
-	exec('rm ' . UPLOAD_PATH . '/*');
+	exec('rm ' . UPLOAD_PATH . '*');
 }
 
 function _moveUploadedFile($file) {
@@ -19,7 +19,7 @@ function _moveUploadedFile($file) {
 	$pathToFile = UPLOAD_DIR . $uploadFileName;
 
 	if (!move_uploaded_file($file[TMP_NAME], $uploadImagePath)) {
-		return ERROR;
+		return false;
 	} 
 		return $pathToFile;
 }
@@ -33,10 +33,10 @@ function filesUpload() {
 
 	foreach ($_FILES as $file) {
 		$pathToFile = _moveUploadedFile($file);
-		// print_r($pathToFile);
+		
 
 		if(!$pathToFile) {
-			return ERROR;
+			return false;
 		}
 
 		array_push($response, [

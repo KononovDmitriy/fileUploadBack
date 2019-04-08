@@ -9,8 +9,8 @@ function postApi($API) {
 			
 			$uploadedFilesList = filesUpload();	
 
-			if ($uploadedFilesList == ERROR) {
-			  echo sendResponse(ERROR, 'Ошибка');
+			if (!$uploadedFilesList) {
+			  echo sendResponse(ERROR);
 			} else {
 			  echo sendResponse(SUCCESS, $uploadedFilesList);	
 			}
